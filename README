@@ -1,0 +1,12 @@
+1.  Install Ruby (latest version)
+2.  Install Ruby on Rails (latest version)
+3.  Install NodeJS
+4.  pull the project
+5.  navigate to site/
+6.  in terminal: $ bundle install
+7.  $ rake db:create db:migrate db:seed
+    [if this gives you an error saying it's already created, that's fine]
+8.  $ rails s
+9.  open your browser and go to 0.0.0.0:3000
+
+at this point you should see a list of the current items.
