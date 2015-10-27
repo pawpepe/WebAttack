@@ -6,4 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-items = Item.create(name: 'Jacket', price: 10)
+Item.create(name: 'Jacket', price: 40)
+Item.create(name: 'Shoes', price: 60)
+Item.create(name: 'Pants', price: 30)
+Item.create(name: 'Socks', price: 10)

@@ -1,6 +1,15 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:add_to_cart]
 
+  def add_to_cart
+    @cart.push(params[:id])
+    Item.find(params[:id]).destroy
+    redirect_to(items_path)
+  end
+  
+  
+  
   # GET /items
   # GET /items.json
   def index
@@ -60,7 +69,7 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
@@ -70,5 +79,11 @@ class ItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:name, :price)
+    end
+  
+    def set_cart
+      unless (@cart)
+        @cart = Array.new
+      end
     end
 end
