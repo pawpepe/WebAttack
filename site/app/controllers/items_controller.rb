@@ -1,18 +1,18 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :set_cart, only: [:add_to_cart]
 
   def add_to_cart
-    @cart.push(params[:id])
     Item.find(params[:id]).destroy
     redirect_to(items_path)
   end
   
   
-  
   # GET /items
   # GET /items.json
   def index
+    if user_signed_in?
+      redirect_to(admin_path)
+    end
     @items = Item.all
   end
 
@@ -81,9 +81,4 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:name, :price)
     end
   
-    def set_cart
-      unless (@cart)
-        @cart = Array.new
-      end
-    end
 end

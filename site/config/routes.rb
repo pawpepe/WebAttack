@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  root 'items#index'
-  resources :items
   
+  devise_for :users
+  root 'items#index'
+  
+  get 'admin' => 'admin#show', as: :admin
   post 'items/:id/add' => 'items#add_to_cart', as: :add_to_cart
+  get 'items' => 'items#index', as: :items
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
