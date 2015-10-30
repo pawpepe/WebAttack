@@ -12,9 +12,7 @@ Item.create(name: 'Pants', price: 30)
 Item.create(name: 'Socks', price: 10)
 
 admin = User.new
-admin.email = "admin@admin.com"
-admin.password = "adminadmin"
-admin.password_confirmation = "adminadmin"
+admin.email = "h4x0R@asjd.com"
+admin.password = "9K)L"z@br)X,$,bz"
+admin.password_confirmation = "9K)L"z@br)X,$,bz"
 admin.save!
-
-User.create(email: 'admin@admin.com', password: 'password', password_confirmation: 'password')

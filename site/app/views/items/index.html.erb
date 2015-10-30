@@ -19,7 +19,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <td><%= item.price %></td>
+        <td>$<%= item.price %>.00</td>
         <td><%= button_to 'Add to Cart', add_to_cart_path(item), method: :post %></td>
       </tr>
     <% end %>
