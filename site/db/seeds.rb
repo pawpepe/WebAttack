@@ -13,6 +13,6 @@ Item.create(name: 'Socks', price: 10)
 
 admin = User.new
 admin.email = "h4x0R@asjd.com"
-admin.password = "9K)L"z@br)X,$,bz"
-admin.password_confirmation = "9K)L"z@br)X,$,bz"
+admin.password = "p3nGu1n69"
+admin.password_confirmation = "p3nGu1n69"
 admin.save!
